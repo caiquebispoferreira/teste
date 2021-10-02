@@ -1,42 +1,12 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            echo 'Hi'
-            echo 'teste'
-          }
-        }
-
-        stage('parallel') {
-          steps {
-            echo 'parale'
-          }
-        }
-
-        stage('okoko') {
-          steps {
-            echo 'teste'
-          }
-        }
-
-      }
+    agent {
+        docker { image 'node:14-alpine' }
     }
-
-    stage('teste') {
-      steps {
-        echo 'teste'
-      }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'gradle --version'
+            }
+        }
     }
-
-    stage('error') {
-      agent any
-      steps {
-        echo 'using docker'
-      }
-    }
-
-  }
 }
