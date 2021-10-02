@@ -31,5 +31,17 @@ pipeline {
       }
     }
 
+    stage('') {
+      agent {
+        node {
+          label 'docker'
+        }
+
+      }
+      steps {
+        echo 'using docker'
+      }
+    }
+
   }
 }
