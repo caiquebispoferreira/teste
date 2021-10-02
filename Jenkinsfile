@@ -31,7 +31,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       agent {
         node {
           label 'docker'
