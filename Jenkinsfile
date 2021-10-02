@@ -32,12 +32,7 @@ pipeline {
     }
 
     stage('error') {
-      agent {
-        node {
-          label 'docker'
-        }
-
-      }
+      agent any
       steps {
         echo 'using docker'
       }
